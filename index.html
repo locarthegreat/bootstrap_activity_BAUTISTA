@@ -232,7 +232,7 @@
             <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
           </div>
         </div>
-        <button type="submit" class="btn btn-primary w-100 mt-4 py-2 fw-semibold">Submit Form</button>
+        <button type="submit" class="btn btn-primary w-100 mt-4 py-2 fw-semibold" href="#">Submit Form</button>
       </form>
     </div>
   </section>
@@ -249,7 +249,6 @@
   </footer>
 
   <script src="bootstrap-5.3.8-dist/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script>
     const themeToggle = document.getElementById('themeToggle');
     const themeIcon = document.getElementById('themeIcon');
@@ -262,39 +261,6 @@
       themeIcon.className = dark ? 'bi bi-sun-fill' : 'bi bi-moon-stars-fill';
       showSecurityNotice(`${dark ? 'Dark' : 'Light'} mode enabled.`);
     });
-
-    document.querySelectorAll('.plan-button').forEach((button) => {
-      button.addEventListener('click', () => {
-        Swal.fire({
-          icon: 'success',
-          title: 'Package selected',
-          text: `${button.textContent.trim()} is a great choice. Tell us about your project below.`,
-          confirmButtonColor: '#0d6efd'
-        }).then(() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' }));
-      });
-    });
-
-    document.getElementById('contactForm').addEventListener('submit', (event) => {
-      event.preventDefault();
-      if (!event.currentTarget.checkValidity()) {
-        event.currentTarget.classList.add('was-validated');
-        return;
-      }
-      Swal.fire({
-        icon: 'success',
-        title: 'Message received',
-        text: 'Thank you for contacting Bautista Digital Studio. We will be in touch soon.',
-        confirmButtonColor: '#0d6efd'
-      });
-      event.currentTarget.reset();
-    });
-
-    document.addEventListener('contextmenu', (event) => {
-      event.preventDefault();
-      showSecurityNotice('Right-click is disabled on this project showcase.');
-    });
-
-    
   </script>
 </body>
 </html>
