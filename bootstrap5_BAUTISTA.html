@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sample Website with Bootstrap 5</title>
+  <link href="bootstrap-5.3.8-dist/bootstrap-5.3.8-dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="bootstrap-icons-1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <style>
+    .card-hover {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card-hover:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+    }
+
+    .hero-section {
+      background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%);
+    }
+
+    .testimonial-control {
+      width: 2.75rem;
+      height: 2.75rem;
+      top: 50%;
+      transform: translateY(-50%);
+      border: 1px solid #6c757d;
+      border-radius: 50%;
+      background-color: #6c757d;
+      opacity: 1;
+    }
+
+    .testimonial-control:hover {
+      background-color: #495057;
+    }
+
+    .testimonial-control i {
+      font-size: 1.25rem;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top border-bottom shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-primary" href="#">
+        <i class="bi bi-bootstrap me-2"></i>Bootstrap5 Website
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+          <li class="nav-item"><a class="nav-link" href="#pricing">Pricing</a></li>
+          <li class="nav-item"><a class="nav-link" href="#testimonials">Reviews</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+            <button class="btn btn-outline-secondary btn-sm rounded-pill" id="themeToggle" type="button" aria-label="Toggle dark mode">
+              <i class="bi bi-moon-stars-fill" id="themeIcon"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero-section text-white text-center py-5" id="home">
+    <div class="container py-5">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <span class="badge bg-light text-primary mb-3 px-3 py-2 rounded-pill fw-semibold">Version 5.3.8</span>
+          <h1 class="display-3 fw-bold mb-3">Build fast, responsive sites with Bootstrap</h1>
+          <p class="lead mb-4 text-white-50">Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.</p>
+          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <a href="#pricing" class="btn btn-light btn-lg px-4 gap-3 fw-bold text-primary">Get Started</a>
+            <a href="https://github.com/twbs/bootstrap/releases/download/v5.3.8/bootstrap-5.3.8-dist.zip" class="btn btn-outline-light btn-lg px-4">Download Boostrap 5.3.8</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="features" class="py-5 bg-body-secondary">
+    <div class="container py-4">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold display-6">Powerful Features</h2>
+        <p class="text-body-secondary">Designed to give you full control over your layout and functionality.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm card-hover p-3">
+            <div class="card-body">
+              <h4 class="card-title fw-bold">Dark Mode Ready</h4>
+              <p class="card-text text-body-secondary">Built-in theme switcher using Bootstrap 5's native data-bs-theme attribute.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm card-hover p-3">
+            <div class="card-body">
+              <h4 class="card-title fw-bold">100% Mobile First</h4>
+              <p class="card-text text-body-secondary">Fully fluid layout engineered to scale down seamlessly to mobile screens.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm card-hover p-3">
+            <div class="card-body">
+              <h4 class="card-title fw-bold">Interactive UI</h4>
+              <p class="card-text text-body-secondary">Includes dynamic feedback toasts, sliders, and form validation logic.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing" class="py-5">
+    <div class="container py-4">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold display-6">Flexible Pricing</h2>
+        <p class="text-body-secondary">Choose the plan that fits your business needs.</p>
+      </div>
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-4">
+          <div class="card border-0 shadow-sm card-hover p-3">
+            <div class="card-body">
+              <h5 class="fw-bold text-muted">Starter</h5>
+              <h1 class="display-5 fw-bold my-3">₱0.00 <span class="fs-6 text-muted">/mo</span></h1>
+              <ul class="list-unstyled my-4">
+                <li class="mb-2"><i class="bi bi-check2 text-primary me-2"></i>1 Project</li>
+                <li class="mb-2"><i class="bi bi-check2 text-primary me-2"></i>Community Support</li>
+                <li class="mb-2 text-muted"><i class="bi bi-x me-2"></i>Custom Domain</li>
+              </ul>
+              <button class="btn btn-outline-primary w-100 fw-semibold plan-button" type="button">Sign Up Free</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card border-primary border-2 shadow-lg card-hover p-3 position-relative">
+            <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-primary px-3 py-2">Most Popular</span>
+            <div class="card-body">
+              <h5 class="fw-bold text-primary">Pro Developer</h5>
+              <h1 class="display-5 fw-bold my-3">₱49.00 <span class="fs-6 text-muted">/mo</span></h1>
+              <ul class="list-unstyled my-4">
+                <li class="mb-2"><i class="bi bi-check2 text-primary me-2"></i>Unlimited Projects</li>
+                <li class="mb-2"><i class="bi bi-check2 text-primary me-2"></i>Priority Support</li>
+                <li class="mb-2"><i class="bi bi-check2 text-primary me-2"></i>Custom Domain</li>
+              </ul>
+              <button class="btn btn-primary w-100 fw-semibold shadow-sm plan-button" type="button">Get Started Pro</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card border-0 shadow-sm card-hover p-3">
+            <div class="card-body">
+              <h5 class="fw-bold text-muted">Enterprise</h5>
+              <h1 class="display-5 fw-bold my-3">₱109.00 <span class="fs-6 text-muted">/mo</span></h1>
+              <ul class="list-unstyled my-4">
+                <li class="mb-2"><i class="bi bi-check2 text-primary me-2"></i>Dedicated Server</li>
+                <li class="mb-2"><i class="bi bi-check2 text-primary me-2"></i>24/7 Phone Support</li>
+                <li class="mb-2"><i class="bi bi-check2 text-primary me-2"></i>SLA Guarantee</li>
+              </ul>
+              <button class="btn btn-outline-primary w-100 fw-semibold plan-button" type="button">Contact Sales</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials" class="py-5 bg-body-secondary text-center">
+    <div class="container py-4">
+      <h2 class="fw-bold mb-4 display-6">What People Say</h2>
+      <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="row justify-content-center">
+              <div class="col-lg-8">
+                <p class="fs-5 text-body-secondary">"This Bootstrap starter layout completely sped up my client workflow. Highly recommended!"</p>
+                <h6 class="fw-bold">Calvin Placio, BSIT-Network Technology Track</h6>
+                <small class="text-body-secondary">Lead Developer, Code-Smart Solutions</small>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row justify-content-center">
+              <div class="col-lg-8">
+                <p class="fs-5 text-body-secondary">"The dark mode toggle integration works like a charm. Extremely clean markup!"</p>
+                <h6 class="fw-bold">Harrold Evangelista, BSIT-Business Analytics Track</h6>
+                <small class="text-body-secondary">UI/UX Designer</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <button class="carousel-control-prev testimonial-control" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev" aria-label="Previous testimonial">
+          <i class="bi bi-chevron-left" aria-hidden="true"></i>
+        </button>
+        <button class="carousel-control-next testimonial-control" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next" aria-label="Next testimonial">
+          <i class="bi bi-chevron-right" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="py-5">
+    <div class="container py-4" style="max-width: 650px;">
+      <div class="text-center mb-4">
+        <h2 class="fw-bold display-6">Get In Touch</h2>
+        <p class="text-body-secondary">Fill out the form below to send us a live message.</p>
+      </div>
+      <form id="contactForm" method="GET">
+        <div class="row g-3">
+          <div class="col-sm-6">
+            <label for="firstName" class="form-label">First Name</label>
+            <input type="text" class="form-control" id="firstName" name="firstName" required>
+          </div>
+          <div class="col-sm-6">
+            <label for="lastName" class="form-label">Last Name</label>
+            <input type="text" class="form-control" id="lastName" name="lastName" required>
+          </div>
+          <div class="col-12">
+            <label for="email" class="form-label">Email Address</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com" required>
+          </div>
+          <div class="col-12">
+            <label for="message" class="form-label">Message</label>
+            <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary w-100 mt-4 py-2 fw-semibold">Submit Form</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="py-4 bg-body-tertiary text-white text-center">
+    <div class="container">
+      <div class="mb-3">
+        <a href="#" class="text-body-secondary me-4" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="text-body-secondary me-4" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+        <a href="#" class="text-body-secondary" aria-label="GitHub"><i class="bi bi-github"></i></a>
+      </div>
+      <small class="text-body-secondary">© 2026 SirMags. Built with Bootstrap 5.3.</small>
+    </div>
+  </footer>
+
+  <script src="bootstrap-5.3.8-dist/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    const html = document.documentElement;
+
+
+    themeToggle.addEventListener('click', () => {
+      const dark = html.getAttribute('data-bs-theme') !== 'dark';
+      html.setAttribute('data-bs-theme', dark ? 'dark' : 'light');
+      themeIcon.className = dark ? 'bi bi-sun-fill' : 'bi bi-moon-stars-fill';
+      showSecurityNotice(`${dark ? 'Dark' : 'Light'} mode enabled.`);
+    });
+
+    document.querySelectorAll('.plan-button').forEach((button) => {
+      button.addEventListener('click', () => {
+        Swal.fire({
+          icon: 'success',
+          title: 'Package selected',
+          text: `${button.textContent.trim()} is a great choice. Tell us about your project below.`,
+          confirmButtonColor: '#0d6efd'
+        }).then(() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' }));
+      });
+    });
+
+    document.getElementById('contactForm').addEventListener('submit', (event) => {
+      event.preventDefault();
+      if (!event.currentTarget.checkValidity()) {
+        event.currentTarget.classList.add('was-validated');
+        return;
+      }
+      Swal.fire({
+        icon: 'success',
+        title: 'Message received',
+        text: 'Thank you for contacting Bautista Digital Studio. We will be in touch soon.',
+        confirmButtonColor: '#0d6efd'
+      });
+      event.currentTarget.reset();
+    });
+
+    document.addEventListener('contextmenu', (event) => {
+      event.preventDefault();
+      showSecurityNotice('Right-click is disabled on this project showcase.');
+    });
+
+    
+  </script>
+</body>
+</html>
